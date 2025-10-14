@@ -266,4 +266,4 @@ scrollTopBtn.addEventListener('mouseleave', function() {
 // ===================================
 console.log('%c Welcome to Naieem Islam\'s Portfolio! ', 'background: #2563eb; color: white; font-size: 20px; padding: 10px;');
 console.log('%c Interested in working together? Let\'s connect! ', 'background: #1e40af; color: white; font-size: 14px; padding: 5px;');
-console.log('%c Email: naieemanishaz@gmail.com ', 'color: #2563eb; font-size: 12px;');
+console.log('%c Email: naieemislam27@gmail.com ', 'color: #2563eb; font-size: 12px;');

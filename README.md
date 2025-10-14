@@ -199,11 +199,11 @@ This project is open source and available for personal use. Feel free to customi
 ## Contact
 
 **Naieem Islam**
-- Email: naieemanishaz@gmail.com
+- Email: naieemislam27@gmail.com
 - Phone: +880 1791 545638
 - Location: Mirpur, Dhaka, Bangladesh
 - GitHub: [Naieem-55](https://github.com/Naieem-55)
-- LinkedIn: [Naieem](https://linkedin.com/in/Naieem)
+- LinkedIn: [Naieem Islam](https://www.linkedin.com/in/naieem-islam-0025061b2/)
 - Codeforces: [Naieem10412](https://codeforces.com/profile/Naieem10412)
 
 ---
