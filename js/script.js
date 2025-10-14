@@ -109,6 +109,13 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
+
+            // Remove inline styles after animation completes to prevent disappearing
+            entry.target.addEventListener('animationend', function() {
+                this.style.opacity = '1';
+                this.style.transform = 'translateY(0)';
+            }, { once: true });
+
             observer.unobserve(entry.target);
         }
     });
