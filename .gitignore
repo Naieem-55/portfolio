@@ -12,6 +12,7 @@ desktop.ini
 *.swp
 *.swo
 *~
+*.pdf
 
 # Logs
 *.log

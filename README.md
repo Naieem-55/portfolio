@@ -15,7 +15,7 @@ Visit https://naieem-55.github.io/portfolio/
 ## Sections
 
 1. **Hero Section**: Introduction with name, title, and call-to-action buttons
-2. **About**: Personal overview with statistics (LeetCode, Codeforces, CGPA)
+2. **About**: Personal overview with statistics (LeetCode problems, Codeforces problems, CGPA)
 3. **Skills**: Technical skills categorized by type (Programming, Frameworks, Database, etc.)
 4. **Projects**: Showcase of 5 major projects with descriptions and tech stacks
 5. **Experience & Education**: Timeline of professional experience and academic background
@@ -72,7 +72,7 @@ Edit `index.html` to update your personal details:
 
 - **Name and Title**: Update in the hero section (lines 33-35)
 - **Contact Information**: Update email, phone, and location in the contact section
-- **Social Links**: Update GitHub, LinkedIn, Codeforces, and other links
+- **Social Links**: Update GitHub, LinkedIn, LeetCode, and other links
 
 ### 2. About Section
 
@@ -204,7 +204,7 @@ This project is open source and available for personal use. Feel free to customi
 - Location: Mirpur, Dhaka, Bangladesh
 - GitHub: [Naieem-55](https://github.com/Naieem-55)
 - LinkedIn: [Naieem Islam](https://www.linkedin.com/in/naieem-islam-0025061b2/)
-- Codeforces: [Naieem10412](https://codeforces.com/profile/Naieem10412)
+- LeetCode: [Naieem_55](https://leetcode.com/u/Naieem_55/)
 
 ---
 
