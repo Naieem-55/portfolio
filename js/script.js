@@ -133,6 +133,27 @@ animateElements.forEach(el => {
 });
 
 // ===================================
+// Animated Skill Bars
+// ===================================
+const skillBars = document.querySelectorAll('.skill-bar-fill');
+
+const skillBarObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const bar = entry.target;
+            const percent = bar.getAttribute('data-percent');
+            bar.style.width = percent + '%';
+            bar.classList.add('animated');
+            skillBarObserver.unobserve(bar);
+        }
+    });
+}, { threshold: 0.5 });
+
+skillBars.forEach(bar => {
+    skillBarObserver.observe(bar);
+});
+
+// ===================================
 // Typing Effect for Hero Title
 // ===================================
 function typeWriter(element, text, speed = 100) {
