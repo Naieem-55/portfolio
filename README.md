@@ -2,32 +2,41 @@
 
 A modern, responsive portfolio website showcasing my skills, projects, and professional experience as a Software Engineer.
 
-Visit https://naieem-55.github.io/portfolio/
+**Live Demo**: [naieem-55.github.io/portfolio](https://naieem-55.github.io/portfolio/)
 
 ## Features
 
-- **Responsive Design**: Fully responsive layout that works on all devices (desktop, tablet, mobile)
-- **Modern UI/UX**: Clean and professional design with smooth animations
-- **Interactive Elements**: Hover effects, scroll animations, and smooth navigation
+- **Responsive Design**: Works on all devices (desktop, tablet, mobile)
+- **Modern UI/UX**: Clean design with smooth animations
 - **Performance Optimized**: Fast loading with optimized assets
-- **SEO Friendly**: Proper meta tags and semantic HTML structure
+- **SEO Friendly**: Proper meta tags and semantic HTML
+- **Accessible**: Follows WCAG guidelines
 
 ## Sections
 
-1. **Hero Section**: Introduction with name, title, and call-to-action buttons
-2. **About**: Personal overview with statistics (LeetCode problems, Codeforces problems, CGPA)
-3. **Skills**: Technical skills categorized by type (Programming, Frameworks, Database, etc.)
-4. **Projects**: Showcase of 5 major projects with descriptions and tech stacks
-5. **Experience & Education**: Timeline of professional experience and academic background
+1. **Hero**: Introduction with name, title, and call-to-action
+2. **About**: Overview with statistics (LeetCode, Codeforces, CGPA)
+3. **Skills**: Technical skills by category
+4. **Projects**: Major projects with descriptions and tech stacks
+5. **Experience & Education**: Timeline of professional journey
 6. **Achievements**: Certifications and accomplishments
-7. **Contact**: Contact information and social media links
+7. **Contact**: Contact information and social links
 
-## Technologies Used
+## Quick Start
 
-- **HTML5**: Semantic markup
-- **CSS3**: Modern styling with custom properties and animations
-- **JavaScript**: Interactive functionality and scroll effects
-- **Font Awesome**: Icons for better visual appeal
+```bash
+# Clone the repository
+git clone https://github.com/Naieem-55/portfolio.git
+cd portfolio
+
+# Open in browser (Option 1: Direct)
+open index.html  # macOS
+start index.html # Windows
+
+# Open in browser (Option 2: Local server)
+python -m http.server 5500
+# Visit http://localhost:5500
+```
 
 ## Project Structure
 
@@ -41,171 +50,154 @@ portfolio/
 ├── assets/             # Images and other assets
 ├── cv/
 │   └── CV2.pdf         # Resume/CV
-└── README.md           # This file
+└── README.md
 ```
 
-## Getting Started
+## Customization
 
-### Prerequisites
+### Personal Information
+Edit `index.html` to update:
+- Name and title (hero section)
+- Contact information
+- Social links (GitHub, LinkedIn, LeetCode)
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A code editor (VS Code, Sublime Text, etc.) for customization
-
-### Installation & Setup
-
-1. **Clone or Download** this repository to your local machine
-
-2. **Open the portfolio**:
-   - Simply open `index.html` in your web browser
-   - Or use a local development server for better experience
-
-3. **Using Live Server (Recommended)**:
-   - If using VS Code, install the "Live Server" extension
-   - Right-click on `index.html` and select "Open with Live Server"
-   - The portfolio will open at `http://localhost:5500` or similar
-
-## Customization Guide
-
-### 1. Personal Information
-
-Edit `index.html` to update your personal details:
-
-- **Name and Title**: Update in the hero section (lines 33-35)
-- **Contact Information**: Update email, phone, and location in the contact section
-- **Social Links**: Update GitHub, LinkedIn, LeetCode, and other links
-
-### 2. About Section
-
-Update the about section text and statistics (lines 50-75):
-- Personal description
-- Problem-solving statistics
-- CGPA or other metrics
-
-### 3. Skills
-
-Add or remove skills in the skills section (lines 80-120):
-- Programming languages
-- Frameworks and tools
-- Databases and cloud services
-- Version control systems
-
-### 4. Projects
-
-Customize project details (lines 125-230):
-- Project titles and descriptions
-- Technologies used
-- Features and achievements
-- Add or remove projects as needed
-
-### 5. Experience & Education
-
-Update timeline items (lines 235-275):
-- Work experience details
-- Educational background
-- Dates and descriptions
-
-### 6. Color Scheme
-
-Edit `css/style.css` to change colors (lines 1-15):
-
+### Color Scheme
+Edit `css/style.css`:
 ```css
 :root {
-    --primary-color: #2563eb;      /* Main blue color */
+    --primary-color: #2563eb;      /* Main blue */
     --secondary-color: #1e40af;    /* Darker blue */
     --accent-color: #3b82f6;       /* Light blue accent */
-    /* ... other colors ... */
 }
 ```
 
-### 7. Adding Profile Image
-
-1. Add your image to the `assets/` folder (e.g., `profile.jpg`)
-2. In `index.html`, add an image element in the hero or about section:
-
+### Adding Profile Image
+1. Add image to `assets/` folder
+2. Add to HTML:
 ```html
 <img src="assets/profile.jpg" alt="Naieem Islam" class="profile-image">
 ```
 
-3. Add styling in `css/style.css`:
-
-```css
-.profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--shadow-lg);
-}
-```
-
 ## Deployment
 
-### GitHub Pages (Free)
+### GitHub Pages (Recommended)
+1. Push code to GitHub
+2. Go to Settings > Pages
+3. Select main branch as source
+4. Site available at `https://username.github.io/portfolio/`
 
-1. Create a GitHub repository
-2. Push your code to the repository
-3. Go to repository Settings > Pages
-4. Select the main branch as source
-5. Your site will be available at `https://yourusername.github.io/repository-name/`
+### Netlify
+1. Sign up at [netlify.com](https://netlify.com)
+2. Drag and drop project folder
+3. Site live instantly
 
-### Netlify (Free)
-
-1. Sign up at [netlify.com](https://www.netlify.com)
-2. Drag and drop your project folder
-3. Your site will be live instantly with a custom URL
-
-### Vercel (Free)
-
+### Vercel
 1. Sign up at [vercel.com](https://vercel.com)
-2. Import your GitHub repository or upload files
+2. Import GitHub repository
 3. Deploy with one click
+
+## Performance
+
+### Lighthouse Scores (Target)
+
+| Metric | Target | Status |
+|--------|--------|--------|
+| Performance | 90+ | Optimize images |
+| Accessibility | 90+ | Add ARIA labels |
+| Best Practices | 90+ | Use HTTPS |
+| SEO | 90+ | Add meta tags |
+
+### Performance Tips
+- Optimize images with [TinyPNG](https://tinypng.com)
+- Keep images under 500KB
+- Use WebP format for better compression
+- Minify CSS/JS for production
+
+### Run Lighthouse Audit
+```bash
+# Using Chrome DevTools
+# 1. Open site in Chrome
+# 2. Right-click > Inspect > Lighthouse tab
+# 3. Click "Analyze page load"
+```
+
+## Accessibility Checklist
+
+- [x] Semantic HTML structure
+- [x] Proper heading hierarchy (h1 > h2 > h3)
+- [x] Alt text for images
+- [x] Sufficient color contrast
+- [x] Keyboard navigation support
+- [ ] ARIA labels for interactive elements
+- [ ] Skip navigation link
+- [ ] Focus indicators visible
+
+### WCAG Guidelines
+- **Level A**: Basic accessibility
+- **Level AA**: Target compliance level
+- **Level AAA**: Enhanced accessibility
+
+Test with:
+- [WAVE Web Accessibility Tool](https://wave.webaim.org/)
+- [axe DevTools](https://www.deque.com/axe/devtools/)
+- Keyboard-only navigation
 
 ## Browser Support
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance Tips
-
-- Optimize images before adding them (use tools like TinyPNG)
-- Keep image file sizes under 500KB
-- Use WebP format for better compression
-- Minimize CSS and JavaScript for production
+| Browser | Version | Status |
+|---------|---------|--------|
+| Chrome | Latest | Fully supported |
+| Firefox | Latest | Fully supported |
+| Safari | Latest | Fully supported |
+| Edge | Latest | Fully supported |
+| Mobile Chrome | Latest | Fully supported |
+| Mobile Safari | Latest | Fully supported |
 
 ## Responsive Breakpoints
 
-- Desktop: 1200px and above
-- Tablet: 768px - 1199px
-- Mobile: Below 768px
-- Small Mobile: Below 480px
+| Device | Width | Notes |
+|--------|-------|-------|
+| Desktop | 1200px+ | Full layout |
+| Tablet | 768-1199px | Adjusted grid |
+| Mobile | 480-767px | Single column |
+| Small Mobile | <480px | Compact layout |
 
-## Features to Add (Future Enhancements)
+## Contributing
+
+Contributions are welcome! If you'd like to improve this portfolio template:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Make your changes
+4. Test across browsers and devices
+5. Commit (`git commit -m 'Add improvement'`)
+6. Push (`git push origin feature/improvement`)
+7. Open a Pull Request
+
+### Development Guidelines
+- Keep HTML semantic
+- Use CSS custom properties for theming
+- Ensure responsive design
+- Test accessibility
+
+## Future Enhancements
 
 - [ ] Dark mode toggle
 - [ ] Blog section
-- [ ] Contact form with backend integration
+- [ ] Contact form with backend
 - [ ] Project filtering by technology
 - [ ] Testimonials section
-- [ ] Download resume button
-- [ ] Multiple language support
+- [ ] Multi-language support
 
 ## License
 
-This project is open source and available for personal use. Feel free to customize it for your own portfolio.
+This project is open source and available for personal use. Feel free to customize for your own portfolio.
 
 ## Contact
 
 **Naieem Islam**
 - Email: naieemislam27@gmail.com
-- Phone: +880 1791 545638
 - Location: Mirpur, Dhaka, Bangladesh
 - GitHub: [Naieem-55](https://github.com/Naieem-55)
 - LinkedIn: [Naieem Islam](https://www.linkedin.com/in/naieem-islam-0025061b2/)
 - LeetCode: [Naieem_55](https://leetcode.com/u/Naieem_55/)
-
----
-
-**Built with passion by Naieem Islam** | Last Updated: October 2025
