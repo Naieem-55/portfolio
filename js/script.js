@@ -27,7 +27,7 @@ function createStars(count) {
             dy: (Math.random() - 0.5) * 0.05,
             // Color tint
             color: Math.random() > 0.7
-                ? (Math.random() > 0.5 ? '167,139,250' : '236,72,153')
+                ? (Math.random() > 0.5 ? '96,165,250' : '99,102,241')
                 : '255,255,255'
         });
     }
@@ -79,9 +79,9 @@ function drawStars(time) {
 function drawNebula() {
     const scrollY = window.pageYOffset;
     const nebulaPatches = [
-        { x: canvas.width * 0.2, y: canvas.height * 0.3, r: 200, color: '139,92,246', opacity: 0.03 },
-        { x: canvas.width * 0.8, y: canvas.height * 0.15, r: 180, color: '236,72,153', opacity: 0.025 },
-        { x: canvas.width * 0.5, y: canvas.height * 0.7, r: 220, color: '59,130,246', opacity: 0.025 },
+        { x: canvas.width * 0.2, y: canvas.height * 0.3, r: 200, color: '99,102,241', opacity: 0.03 },
+        { x: canvas.width * 0.8, y: canvas.height * 0.15, r: 180, color: '59,130,246', opacity: 0.025 },
+        { x: canvas.width * 0.5, y: canvas.height * 0.7, r: 220, color: '34,211,238', opacity: 0.025 },
     ];
 
     nebulaPatches.forEach(patch => {
@@ -387,7 +387,7 @@ scrollTopBtn.style.cssText = `
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #6366f1, #3b82f6);
     color: white;
     border: none;
     border-radius: 50%;
@@ -397,7 +397,7 @@ scrollTopBtn.style.cssText = `
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 `;
 
 document.body.appendChild(scrollTopBtn);
@@ -421,17 +421,17 @@ scrollTopBtn.addEventListener('click', () => {
 
 scrollTopBtn.addEventListener('mouseenter', function() {
     this.style.transform = 'translateY(-5px)';
-    this.style.boxShadow = '0 6px 25px rgba(139, 92, 246, 0.5)';
+    this.style.boxShadow = '0 6px 25px rgba(99, 102, 241, 0.5)';
 });
 
 scrollTopBtn.addEventListener('mouseleave', function() {
     this.style.transform = 'translateY(0)';
-    this.style.boxShadow = '0 4px 15px rgba(139, 92, 246, 0.3)';
+    this.style.boxShadow = '0 4px 15px rgba(99, 102, 241, 0.3)';
 });
 
 // ===================================
 // Console Message
 // ===================================
-console.log('%c Welcome to Naieem Islam\'s Portfolio! ', 'background: linear-gradient(135deg, #8b5cf6, #ec4899); color: white; font-size: 20px; padding: 10px; border-radius: 5px;');
-console.log('%c Interested in working together? Let\'s connect! ', 'background: #7c3aed; color: white; font-size: 14px; padding: 5px; border-radius: 3px;');
-console.log('%c Email: naieemislam27@gmail.com ', 'color: #a78bfa; font-size: 12px;');
+console.log('%c Welcome to Naieem Islam\'s Portfolio! ', 'background: #3b82f6; color: white; font-size: 20px; padding: 10px; border-radius: 5px;');
+console.log('%c Interested in working together? Let\'s connect! ', 'background: #6366f1; color: white; font-size: 14px; padding: 5px; border-radius: 3px;');
+console.log('%c Email: naieemislam27@gmail.com ', 'color: #60a5fa; font-size: 12px;');
