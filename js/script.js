@@ -145,22 +145,28 @@ navLinks.forEach(link => {
 });
 
 // ===================================
-// Scroll Reveal Animation
+// Staggered Scroll Reveal Animation
 // ===================================
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -80px 0px'
+    rootMargin: '0px 0px -60px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            // Find siblings in same parent grid/flex for stagger
+            const parent = entry.target.parentElement;
+            const siblings = Array.from(parent.children).filter(
+                child => child.classList.contains('reveal-item')
+            );
+            const index = siblings.indexOf(entry.target);
+            const delay = index * 80; // 80ms stagger
 
-            entry.target.addEventListener('animationend', function() {
-                this.style.opacity = '1';
-                this.style.transform = 'translateY(0)';
-            }, { once: true });
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, delay);
 
             observer.unobserve(entry.target);
         }
@@ -168,13 +174,34 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 const animateElements = document.querySelectorAll(
-    '.skill-category, .project-card, .timeline-item, .achievement-card, .contact-item, .stat-item'
+    '.skill-category, .project-card, .timeline-item, .achievement-card, .contact-item, .stat-item, .github-stat-card'
 );
 
 animateElements.forEach(el => {
+    el.classList.add('reveal-item');
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
+});
+
+// Also animate section titles and subtitles
+const sectionHeaders = document.querySelectorAll('.section-title, .section-subtitle');
+const headerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            headerObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+sectionHeaders.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(12px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    headerObserver.observe(el);
 });
 
 // ===================================
