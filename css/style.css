@@ -548,71 +548,80 @@ section {
 }
 
 /* Animated Skill Bars */
-.skill-bars-container {
+.proficiency-container {
     margin-top: 3.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.skill-bars-title {
+.proficiency-title {
     font-size: 1.25rem;
     color: var(--text-primary);
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
     text-align: center;
     font-weight: 600;
 }
 
-.skill-bars {
+.proficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.proficiency-item {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    align-items: center;
+    gap: 0.75rem;
 }
 
-.skill-bar-item {
+.proficiency-ring {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.proficiency-ring svg {
     width: 100%;
-}
-
-.skill-bar-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.4rem;
-}
-
-.skill-bar-name {
-    color: var(--text-primary);
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-.skill-bar-percent {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.skill-bar-bg {
-    width: 100%;
-    height: 6px;
-    background: var(--bg-tertiary);
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.skill-bar-fill {
     height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-    border-radius: 6px;
-    transition: width 1.5s ease-out;
+    transform: rotate(-90deg);
 }
 
-.skill-bar-fill.animated {
-    animation: skillBarFill 1.5s ease-out forwards;
+.proficiency-ring .ring-bg {
+    fill: none;
+    stroke: var(--bg-tertiary);
+    stroke-width: 8;
 }
 
-@keyframes skillBarFill {
-    from { width: 0; }
+.proficiency-ring .ring-fill {
+    fill: none;
+    stroke: url(#proficiency-gradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.proficiency-percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.proficiency-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .proficiency-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* ===================================

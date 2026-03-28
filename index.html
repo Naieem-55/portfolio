@@ -185,63 +185,79 @@
                 </div>
             </div>
 
-            <!-- Animated Skill Bars -->
-            <div class="skill-bars-container">
-                <h3 class="skill-bars-title">Proficiency Level</h3>
-                <div class="skill-bars">
-                    <div class="skill-bar-item">
-                        <div class="skill-bar-info">
-                            <span class="skill-bar-name">C++ / C</span>
-                            <span class="skill-bar-percent">90%</span>
+            <!-- SVG Gradient Definition -->
+            <svg width="0" height="0" style="position:absolute">
+                <defs>
+                    <linearGradient id="proficiency-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="var(--secondary-color)"/>
+                        <stop offset="100%" stop-color="var(--primary-color)"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <!-- Circular Proficiency Rings -->
+            <div class="proficiency-container">
+                <h3 class="proficiency-title">Proficiency Level</h3>
+                <div class="proficiency-grid">
+                    <div class="proficiency-item">
+                        <div class="proficiency-ring" data-percent="90">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                            </svg>
+                            <span class="proficiency-percent">90%</span>
                         </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-percent="90"></div>
-                        </div>
+                        <span class="proficiency-name">C++ / C</span>
                     </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-bar-info">
-                            <span class="skill-bar-name">Java</span>
-                            <span class="skill-bar-percent">85%</span>
+                    <div class="proficiency-item">
+                        <div class="proficiency-ring" data-percent="85">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                            </svg>
+                            <span class="proficiency-percent">85%</span>
                         </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-percent="85"></div>
-                        </div>
+                        <span class="proficiency-name">Java</span>
                     </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-bar-info">
-                            <span class="skill-bar-name">C# / ASP.NET</span>
-                            <span class="skill-bar-percent">85%</span>
+                    <div class="proficiency-item">
+                        <div class="proficiency-ring" data-percent="85">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                            </svg>
+                            <span class="proficiency-percent">85%</span>
                         </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-percent="85"></div>
-                        </div>
+                        <span class="proficiency-name">C# / ASP.NET</span>
                     </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-bar-info">
-                            <span class="skill-bar-name">Python</span>
-                            <span class="skill-bar-percent">80%</span>
+                    <div class="proficiency-item">
+                        <div class="proficiency-ring" data-percent="80">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                            </svg>
+                            <span class="proficiency-percent">80%</span>
                         </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-percent="80"></div>
-                        </div>
+                        <span class="proficiency-name">Python</span>
                     </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-bar-info">
-                            <span class="skill-bar-name">JavaScript / React</span>
-                            <span class="skill-bar-percent">75%</span>
+                    <div class="proficiency-item">
+                        <div class="proficiency-ring" data-percent="75">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                            </svg>
+                            <span class="proficiency-percent">75%</span>
                         </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-percent="75"></div>
-                        </div>
+                        <span class="proficiency-name">JavaScript / React</span>
                     </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-bar-info">
-                            <span class="skill-bar-name">Database (MySQL, PostgreSQL)</span>
-                            <span class="skill-bar-percent">80%</span>
+                    <div class="proficiency-item">
+                        <div class="proficiency-ring" data-percent="80">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73" stroke-dashoffset="326.73"/>
+                            </svg>
+                            <span class="proficiency-percent">80%</span>
                         </div>
-                        <div class="skill-bar-bg">
-                            <div class="skill-bar-fill" data-percent="80"></div>
-                        </div>
+                        <span class="proficiency-name">Database</span>
                     </div>
                 </div>
             </div>

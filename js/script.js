@@ -205,24 +205,26 @@ sectionHeaders.forEach(el => {
 });
 
 // ===================================
-// Animated Skill Bars
+// Animated Proficiency Rings
 // ===================================
-const skillBars = document.querySelectorAll('.skill-bar-fill');
+const proficiencyRings = document.querySelectorAll('.proficiency-ring');
+const circumference = 2 * Math.PI * 52; // r=52
 
-const skillBarObserver = new IntersectionObserver((entries) => {
+const ringObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const bar = entry.target;
-            const percent = bar.getAttribute('data-percent');
-            bar.style.width = percent + '%';
-            bar.classList.add('animated');
-            skillBarObserver.unobserve(bar);
+            const ring = entry.target;
+            const percent = ring.getAttribute('data-percent');
+            const offset = circumference - (circumference * percent / 100);
+            const fill = ring.querySelector('.ring-fill');
+            fill.style.strokeDashoffset = offset;
+            ringObserver.unobserve(ring);
         }
     });
 }, { threshold: 0.5 });
 
-skillBars.forEach(bar => {
-    skillBarObserver.observe(bar);
+proficiencyRings.forEach(ring => {
+    ringObserver.observe(ring);
 });
 
 // ===================================
