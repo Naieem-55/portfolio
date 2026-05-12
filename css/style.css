@@ -8,15 +8,15 @@
     --c-fuchsia: #d946ef;
     --c-violet: #8b5cf6;
 
-    /* Surfaces */
-    --bg-0: #05060f;
-    --bg-1: #0a0d1c;
-    --bg-2: #111427;
-    --bg-3: #161a30;
-    --glass: rgba(20, 24, 50, 0.45);
-    --glass-strong: rgba(22, 26, 55, 0.7);
-    --hairline: rgba(148, 163, 255, 0.08);
-    --hairline-strong: rgba(148, 163, 255, 0.18);
+    /* Surfaces — deep slate navy (professional dark) */
+    --bg-0: #0a1020;
+    --bg-1: #101a31;
+    --bg-2: #172241;
+    --bg-3: #1f2c4d;
+    --glass: rgba(23, 34, 65, 0.55);
+    --glass-strong: rgba(25, 36, 70, 0.78);
+    --hairline: rgba(148, 163, 220, 0.1);
+    --hairline-strong: rgba(148, 163, 220, 0.22);
 
     /* Text */
     --text-primary: #eef2ff;
@@ -108,24 +108,24 @@ body {
 .mesh-blob-1 {
     width: 60vmax; height: 60vmax;
     top: -20vmax; left: -20vmax;
-    background: radial-gradient(circle at center, rgba(34, 211, 238, 0.5), transparent 60%);
-    opacity: 0.6;
+    background: radial-gradient(circle at center, rgba(34, 211, 238, 0.32), transparent 60%);
+    opacity: 0.45;
     animation: meshFloatA 22s ease-in-out infinite alternate;
 }
 
 .mesh-blob-2 {
     width: 60vmax; height: 60vmax;
     bottom: -25vmax; right: -20vmax;
-    background: radial-gradient(circle at center, rgba(217, 70, 239, 0.45), transparent 60%);
-    opacity: 0.55;
+    background: radial-gradient(circle at center, rgba(217, 70, 239, 0.28), transparent 60%);
+    opacity: 0.4;
     animation: meshFloatB 26s ease-in-out infinite alternate;
 }
 
 .mesh-blob-3 {
     width: 50vmax; height: 50vmax;
     top: 30%; left: 35%;
-    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.5), transparent 60%);
-    opacity: 0.55;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.32), transparent 60%);
+    opacity: 0.42;
     animation: meshFloatC 30s ease-in-out infinite alternate;
 }
 
