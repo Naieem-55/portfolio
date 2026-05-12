@@ -38,11 +38,17 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Lenis smooth scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
 </head>
 <body>
     <!-- Animated mesh gradient background -->
     <div class="mesh-bg" aria-hidden="true">
-        <div class="mesh-blob-3"></div>
+        <div class="mesh-blob mesh-blob-1"></div>
+        <div class="mesh-blob mesh-blob-2"></div>
+        <div class="mesh-blob mesh-blob-3"></div>
+        <div class="grid-overlay"></div>
     </div>
 
     <!-- Starfield canvas -->
@@ -83,7 +89,7 @@
                     <img src="assets/img.png" alt="Naieem Islam - Software Engineer" class="profile-photo">
                 </div>
                 <div class="status-badge"><span>Available for opportunities</span></div>
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Naieem Islam</span></h1>
+                <h1 class="hero-title" data-split>Hi, I'm <span class="highlight">Naieem Islam</span></h1>
                 <h2 class="hero-subtitle">I build <span class="role-rotator" id="roleRotator">Software</span></h2>
                 <p class="hero-description">
                     Software Engineer with a strong foundation in C#, Java, Python, and C++. I love designing
@@ -95,12 +101,16 @@
                     <a href="https://drive.google.com/uc?export=download&id=10QpxvTood6CB20vi_7fLPYeq5ry51bWX" target="_blank" class="btn btn-download" data-magnetic><i class="fas fa-download"></i> Download CV</a>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com/Naieem-55" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/naieem-islam-0025061b2/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/u/Naieem_55/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
-                    <a href="mailto:naieemislam27@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/Naieem-55" target="_blank" aria-label="GitHub" data-magnetic><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/naieem-islam-0025061b2/" target="_blank" aria-label="LinkedIn" data-magnetic><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/Naieem_55/" target="_blank" aria-label="LeetCode" data-magnetic><i class="fas fa-code"></i></a>
+                    <a href="mailto:naieemislam27@gmail.com" aria-label="Email" data-magnetic><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
+            <a href="#about" class="scroll-hint" aria-label="Scroll down">
+                <span class="scroll-hint-mouse"><span class="scroll-hint-wheel"></span></span>
+                <span class="scroll-hint-label">Scroll</span>
+            </a>
         </div>
     </section>
 
@@ -301,7 +311,7 @@
                 <!-- Project 1 -->
                 <div class="project-card reveal" data-tilt>
                     <div class="project-image" data-fallback="cab">
-                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80&auto=format&fit=crop" alt="CAB Management System" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
+                        <img src="https://images.unsplash.com/photo-1545179605-1296651e9d43?w=800&q=80&auto=format&fit=crop" alt="CAB Management System" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
                         <span class="project-badge">Web App</span>
                     </div>
                     <div class="project-body">
@@ -332,7 +342,7 @@
                 <!-- Project 2 -->
                 <div class="project-card reveal" data-tilt>
                     <div class="project-image" data-fallback="blockchain">
-                        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80&auto=format&fit=crop" alt="Blockchain Supply Chain" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
+                        <img src="https://images.unsplash.com/photo-1605792657660-596af9009e82?w=800&q=80&auto=format&fit=crop" alt="Blockchain Supply Chain" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
                         <span class="project-badge">Thesis</span>
                     </div>
                     <div class="project-body">
@@ -360,7 +370,7 @@
                 <!-- Project 3 -->
                 <div class="project-card reveal" data-tilt>
                     <div class="project-image" data-fallback="ai">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80&auto=format&fit=crop" alt="RAG Chatbot" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
+                        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80&auto=format&fit=crop" alt="RAG Chatbot" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
                         <span class="project-badge">AI Project</span>
                     </div>
                     <div class="project-body">
@@ -389,7 +399,7 @@
                 <!-- Project 4 -->
                 <div class="project-card reveal" data-tilt>
                     <div class="project-image" data-fallback="media">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80&auto=format&fit=crop" alt="Media Converter" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
+                        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80&auto=format&fit=crop" alt="Media Converter" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
                         <span class="project-badge">Web App</span>
                     </div>
                     <div class="project-body">
@@ -419,7 +429,7 @@
                 <!-- Project 5 -->
                 <div class="project-card reveal" data-tilt>
                     <div class="project-image" data-fallback="data">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop" alt="Advance RAG" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80&auto=format&fit=crop" alt="Advance RAG Knowledge Graph" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
                         <span class="project-badge">AI Project</span>
                     </div>
                     <div class="project-body">
@@ -451,7 +461,7 @@
                 <!-- Project 6 -->
                 <div class="project-card reveal" data-tilt>
                     <div class="project-image" data-fallback="game">
-                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80&auto=format&fit=crop" alt="Flappy Bird 2 Mobile Game" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
+                        <img src="https://images.unsplash.com/photo-1556438064-2d7646166914?w=800&q=80&auto=format&fit=crop" alt="Flappy Bird 2 Mobile Game" loading="lazy" onerror="this.parentElement.classList.add('img-failed');this.remove();">
                         <span class="project-badge">Mobile Game</span>
                     </div>
                     <div class="project-body">

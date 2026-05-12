@@ -1,4 +1,25 @@
 // ===================================
+// Lenis smooth scroll (inertia)
+// ===================================
+(function smoothScroll() {
+    if (typeof Lenis === 'undefined') return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.2
+    });
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    window.__lenis = lenis;
+})();
+
+// ===================================
 // Starfield (subtle twinkling stars)
 // ===================================
 (function starfield() {
@@ -162,7 +183,7 @@
 })();
 
 // ===================================
-// Smooth scroll w/ offset
+// Smooth scroll w/ offset (uses Lenis if available)
 // ===================================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -171,9 +192,107 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const target = document.querySelector(id);
         if (!target) return;
         e.preventDefault();
-        window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 70;
+        if (window.__lenis) {
+            window.__lenis.scrollTo(top, { duration: 1.2 });
+        } else {
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
     });
 });
+
+// ===================================
+// Mouse-parallax on hero blobs + profile
+// ===================================
+(function parallax() {
+    if (matchMedia('(hover: none), (pointer: coarse)').matches) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const blobs = document.querySelectorAll('.mesh-blob');
+    const hero = document.querySelector('.hero-image');
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+
+    window.addEventListener('mousemove', (e) => {
+        tx = (e.clientX / window.innerWidth - 0.5) * 2;
+        ty = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    function loop() {
+        cx += (tx - cx) * 0.06;
+        cy += (ty - cy) * 0.06;
+        blobs.forEach((b, i) => {
+            const k = (i + 1) * 14;
+            b.style.translate = `${cx * k}px ${cy * k}px`;
+        });
+        if (hero) hero.style.translate = `${cx * 8}px ${cy * 8}px`;
+        requestAnimationFrame(loop);
+    }
+    loop();
+})();
+
+// ===================================
+// Hero title char split + reveal
+// ===================================
+(function charSplit() {
+    document.querySelectorAll('[data-split]').forEach(el => {
+        // Wrap the entire .highlight as one animated unit (preserve gradient text)
+        const highlight = el.querySelector('.highlight');
+        const walker = document.createTreeWalker(
+            el,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode: (node) => {
+                    if (highlight && highlight.contains(node)) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+        const nodes = [];
+        let n; while ((n = walker.nextNode())) nodes.push(n);
+
+        let idx = 0;
+        nodes.forEach(node => {
+            const frag = document.createDocumentFragment();
+            [...node.nodeValue].forEach((ch) => {
+                if (ch === ' ') {
+                    frag.appendChild(document.createTextNode(' '));
+                    idx++;
+                    return;
+                }
+                const span = document.createElement('span');
+                span.className = 'char';
+                span.textContent = ch;
+                span.style.transitionDelay = `${idx * 35}ms`;
+                frag.appendChild(span);
+                idx++;
+            });
+            node.parentNode.replaceChild(frag, node);
+        });
+
+        if (highlight) {
+            highlight.classList.add('char');
+            highlight.style.transitionDelay = `${idx * 35}ms`;
+        }
+
+        requestAnimationFrame(() => {
+            el.querySelectorAll('.char').forEach(c => c.classList.add('visible'));
+        });
+    });
+})();
+
+// ===================================
+// Ken-burns trigger when project image in view
+// ===================================
+(function kenBurns() {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.project-image').forEach(el => io.observe(el));
+})();
 
 // ===================================
 // Reveal-on-scroll w/ stagger
